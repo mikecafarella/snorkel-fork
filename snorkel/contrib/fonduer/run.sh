@@ -42,5 +42,6 @@ fi
 cd "$SNORKELHOME"
 
 # Launch jupyter notebook!
-echo "Launching Jupyter Notebook..."
-jupyter notebook --notebook-dir="$SNORKELHOME"
+#echo "Launching Jupyter Notebook..."
+#jupyter notebook --notebook-dir="$SNORKELHOME"
+#jupyter_remote_snorkel
