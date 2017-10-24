@@ -1,5 +1,10 @@
 https://api.census.gov/data/2011/acs5/geo.html
 http://www.mooreds.com/wordpress/archives/963
 https://developers.google.com/places/web-service/autocomplete
+
+#GOOGLE MAPS APIs
 https://github.com/googlemaps/google-maps-services-python
 https://github.com/googlemaps/google-maps-services-python/blob/master/googlemaps/places.py
+
+##VISUALIZATION IN JUPYTER
+https://github.com/pbugnion/gmaps
