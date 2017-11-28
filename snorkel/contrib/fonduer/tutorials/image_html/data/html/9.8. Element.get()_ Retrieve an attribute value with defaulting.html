@@ -1,0 +1,46 @@
+
+<!-- saved from url=(0065)http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-get.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>9.8.&nbsp;Element.get(): Retrieve an attribute
+      value with defaulting</title><link rel="stylesheet" href="./9.8. Element.get()_ Retrieve an attribute value with defaulting_files/docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.70.1"><link rel="start" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html" title="Python XML processing with lxml"><link rel="up" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/class-Element.html" title="9. class Element: One element in the tree"><link rel="prev" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findtext.html" title="9.7. Element.findtext(): Extract text
+      content"><link rel="next" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-getchildren.html" title="9.9. Element.getchildren(): Get element
+      children"></head><body><div class="topnavbar"><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-getchildren.html">Next</a> / <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findtext.html">Previous</a> / <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html">Contents</a> / <a href="http://www.nmt.edu/~shipman/">Shipman's homepage</a></div><div class="navheader"><table width="100%" summary="Navigation header"><tbody><tr valign="top"><td align="left" valign="top"><h1>Python XML processing with <code class="code">lxml</code></h1></td><td><img alt="organizational logo" src="./9.8. Element.get()_ Retrieve an attribute value with defaulting_files/zdplogo.png"></td></tr></tbody></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Element-get"></a>9.8.&nbsp;<code class="code">Element.get()</code>: Retrieve an attribute
+      value with defaulting</h3></div></div></div><p>
+        There are two ways you can try to get an attribute value
+        from an <code class="code">Element</code> instance.  See also the
+        <code class="code">.attrib</code> dictionary in <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/class-Element.html#Element-attributes" title="9.1. Attributes of an Element instance">Section&nbsp;9.1, “Attributes of an <code class="code">Element</code> instance”</a>.
+      </p><p>
+        The <code class="code">.get()</code> method on an <code class="code">Element</code> instance also attempts to retrieve an
+        attribute value.  The advantage of this method is that
+        you can provide a default value that is returned if the
+        element in question does not actually have an attribute
+        by the given name.
+      </p><p>
+        Here is the general form, for some <code class="code">Element</code>
+        instance <code class="code"><em class="replaceable"><code>E</code></em></code>.
+      </p><pre class="programlisting"><em class="replaceable"><code>E</code></em>.get(key, default=None)
+</pre><p>
+        The <code class="code">key</code> argument is the name of the
+        attribute whose value you want to retrieve.
+      </p><div class="itemizedlist"><ul type="disc" compact=""><li><p>
+            If <code class="code"><em class="replaceable"><code>E</code></em></code> has an attribute
+            by that name, the method returns that attribute's value
+            as a string.
+          </p></li><li><p>
+            If <code class="code"><em class="replaceable"><code>E</code></em></code> has
+            no such attribute, the method returns the <code class="code">default</code> argument, which itself has a default
+            value of <code class="code">None</code>.
+          </p></li></ul></div><p>
+        Here's an example:
+      </p><pre class="programlisting">&gt;&gt;&gt; from lxml import etree
+&gt;&gt;&gt; node = etree.fromstring('&lt;mount species="Jackalope"/&gt;')
+&gt;&gt;&gt; print node.get('species')
+Jackalope
+&gt;&gt;&gt; print node.get('source')
+None
+&gt;&gt;&gt; print node.get('source', 'Unknown')
+Unknown
+&gt;&gt;&gt; 
+</pre></div><hr><div class="navfooter"><div class="botlinks"><div class="bot-next"><b>Next: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-getchildren.html">9.9.&nbsp;<code class="code">Element.getchildren()</code>: Get element
+      children</a></div><div class="bot-contents"><b>Contents: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html">Python XML processing with <code class="code">lxml</code></a></div><div class="bot-prev"><b>Previous: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findtext.html">9.7.&nbsp;<code class="code">Element.findtext()</code>: Extract text
+      content</a></div><div><b>Home: </b><a href="http://www.nmt.edu/~shipman/">John Shipman's Home Sweet Homepage</a></div></div><hr><div class="colophon"><address><div class="colophon-author">John W. Shipman</div><div class="colophon-mailto">Comments welcome: <a href="mailto:john@nmt.edu">john@nmt.edu</a></div></address><div class="colophon-date">Last updated: 2014-09-02&nbsp;11:23</div><div class="colophon-url">URL: <span class="colophon-uri">http://www.nmt.edu/~shipman/soft/pylxml/web/Element-get.html</span></div></div></div>
+</body></html>
