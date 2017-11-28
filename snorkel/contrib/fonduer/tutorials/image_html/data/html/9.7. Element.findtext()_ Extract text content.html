@@ -1,0 +1,53 @@
+
+<!-- saved from url=(0070)http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findtext.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>9.7.&nbsp;Element.findtext(): Extract text
+      content</title><link rel="stylesheet" href="./9.7. Element.findtext()_ Extract text content_files/docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.70.1"><link rel="start" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html" title="Python XML processing with lxml"><link rel="up" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/class-Element.html" title="9. class Element: One element in the tree"><link rel="prev" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findall.html" title="9.6. Element.findall(): Find all matching
+      sub-elements"><link rel="next" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-get.html" title="9.8. Element.get(): Retrieve an attribute
+      value with defaulting"></head><body><div class="topnavbar"><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-get.html">Next</a> / <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findall.html">Previous</a> / <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html">Contents</a> / <a href="http://www.nmt.edu/~shipman/">Shipman's homepage</a></div><div class="navheader"><table width="100%" summary="Navigation header"><tbody><tr valign="top"><td align="left" valign="top"><h1>Python XML processing with <code class="code">lxml</code></h1></td><td><img alt="organizational logo" src="./9.7. Element.findtext()_ Extract text content_files/zdplogo.png"></td></tr></tbody></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Element-findtext"></a>9.7.&nbsp;<code class="code">Element.findtext()</code>: Extract text
+      content</h3></div></div></div><p>
+        To find the text content inside a specific element, call this
+        method, where <code class="code"><em class="replaceable"><code>E</code></em></code> is
+        some <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/namespaces.html#def-ancestor" title="4.1.5. Ancestor">ancestor</a> of that
+        element:
+      </p><pre class="programlisting"><em class="replaceable"><code>E</code></em>.findtext(path, default=None, namespaces=<em class="replaceable"><code>N</code></em>)
+</pre><p>
+        The <code class="code">path</code> argument specifies the desired element
+        in the same way as does the <code class="code">path</code> argument in
+        <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-find.html" title="9.5. Element.find(): Find a matching
+      sub-element">Section&nbsp;9.5, “<code class="code">Element.find()</code>: Find a matching
+      sub-element”</a>.
+      </p><div class="itemizedlist"><ul type="disc"><li><p>
+            If any descendants of <code class="code"><em class="replaceable"><code>E</code></em></code> exist that match the given <code class="code">path</code>,
+            this method returns the text content of the first matching
+            element.
+          </p></li><li><p>
+            If the there is at least one matching element but it has
+            no text content, the returned value will be the empty
+            string.
+          </p></li><li><p>
+            If no elements match the specified <code class="code">path</code>,
+            the method will return None, or the value of the <code class="code">default=</code> keyword argument if you provided one.
+          </p></li></ul></div><p>
+        Here's a conversational example.
+      </p><pre class="programlisting">&gt;&gt;&gt; from lxml import etree
+&gt;&gt;&gt; node=etree.fromstring('&lt;a&gt;&lt;b&gt;bum&lt;/b&gt;&lt;b&gt;ear&lt;/b&gt;&lt;c/&gt;&lt;/a&gt;')
+&gt;&gt;&gt; node.findtext('b')
+'bum'
+&gt;&gt;&gt; node.findtext('c')
+''
+&gt;&gt;&gt; node.findtext('c', default='Huh?')
+''
+&gt;&gt;&gt; print node.findtext('x')
+None
+&gt;&gt;&gt; node.findtext('x', default='Huh?')
+'Huh?'
+</pre><p>
+        The optional <code class="code">namespaces</code> keyword argument allows
+        you to specify namespace prefixes for multi-namespace
+        documents; for details, see <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-find.html" title="9.5. Element.find(): Find a matching
+      sub-element">Section&nbsp;9.5, “<code class="code">Element.find()</code>: Find a matching
+      sub-element”</a>.
+      </p></div><hr><div class="navfooter"><div class="botlinks"><div class="bot-next"><b>Next: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-get.html">9.8.&nbsp;<code class="code">Element.get()</code>: Retrieve an attribute
+      value with defaulting</a></div><div class="bot-contents"><b>Contents: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html">Python XML processing with <code class="code">lxml</code></a></div><div class="bot-prev"><b>Previous: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findall.html">9.6.&nbsp;<code class="code">Element.findall()</code>: Find all matching
+      sub-elements</a></div><div><b>Home: </b><a href="http://www.nmt.edu/~shipman/">John Shipman's Home Sweet Homepage</a></div></div><hr><div class="colophon"><address><div class="colophon-author">John W. Shipman</div><div class="colophon-mailto">Comments welcome: <a href="mailto:john@nmt.edu">john@nmt.edu</a></div></address><div class="colophon-date">Last updated: 2014-09-02&nbsp;11:23</div><div class="colophon-url">URL: <span class="colophon-uri">http://www.nmt.edu/~shipman/soft/pylxml/web/Element-findtext.html</span></div></div></div>
+</body></html>

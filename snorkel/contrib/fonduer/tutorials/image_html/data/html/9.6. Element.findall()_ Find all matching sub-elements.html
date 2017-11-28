@@ -1,0 +1,40 @@
+
+<!-- saved from url=(0069)http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findall.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>9.6.&nbsp;Element.findall(): Find all matching
+      sub-elements</title><link rel="stylesheet" href="./9.6. Element.findall()_ Find all matching sub-elements_files/docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.70.1"><link rel="start" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html" title="Python XML processing with lxml"><link rel="up" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/class-Element.html" title="9. class Element: One element in the tree"><link rel="prev" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-find.html" title="9.5. Element.find(): Find a matching
+      sub-element"><link rel="next" href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findtext.html" title="9.7. Element.findtext(): Extract text
+      content"></head><body><div class="topnavbar"><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findtext.html">Next</a> / <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-find.html">Previous</a> / <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html">Contents</a> / <a href="http://www.nmt.edu/~shipman/">Shipman's homepage</a></div><div class="navheader"><table width="100%" summary="Navigation header"><tbody><tr valign="top"><td align="left" valign="top"><h1>Python XML processing with <code class="code">lxml</code></h1></td><td><img alt="organizational logo" src="./9.6. Element.findall()_ Find all matching sub-elements_files/zdplogo.png"></td></tr></tbody></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="Element-findall"></a>9.6.&nbsp;<code class="code">Element.findall()</code>: Find all matching
+      sub-elements</h3></div></div></div><p>
+        This method returns a list of <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/namespaces.html#def-descendant" title="4.1.6. Descendant">descendants</a> of the element that match a pattern
+        described by the <code class="code">path</code> argument.
+      </p><pre class="programlisting"><em class="replaceable"><code>E</code></em>.findall(path[, namespaces=<em class="replaceable"><code>N</code></em>])
+</pre><p>
+        The way that the <code class="code">path</code> argument describes
+        the desired set of nodes works the same ways as
+        the <code class="code">path</code> argument described in
+        <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-find.html" title="9.5. Element.find(): Find a matching
+      sub-element">Section&nbsp;9.5, “<code class="code">Element.find()</code>: Find a matching
+      sub-element”</a>.
+      </p><p>
+        For example, if an <code class="code">article</code> element
+        named <code class="code">root</code> has zero or more children
+        named <code class="code">section</code>, this call would set
+        <code class="code">sectionList</code> to a list containing
+        <code class="code">Element</code> instances representing those
+        children.
+      </p><pre class="programlisting">    sectionList = root.findall('section')
+</pre><p>
+        The optional <code class="code">namespaces</code> keyword argument allows
+        you to specify a <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/namespace-map.html" title="4.3. Namespace maps">namespace
+        map</a>.  If supplied, this namespace map is used to
+        interpret namespace prefixes in the <code class="code">path</code>;
+        see <a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-find.html" title="9.5. Element.find(): Find a matching
+      sub-element">Section&nbsp;9.5, “<code class="code">Element.find()</code>: Find a matching
+      sub-element”</a> for details.
+      </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+          The <code class="code">namespaces</code> keyword argument is available
+          only since release 2.3.0 of <code class="code">lxml.etree</code>.
+        </p></div></div><hr><div class="navfooter"><div class="botlinks"><div class="bot-next"><b>Next: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-findtext.html">9.7.&nbsp;<code class="code">Element.findtext()</code>: Extract text
+      content</a></div><div class="bot-contents"><b>Contents: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/index.html">Python XML processing with <code class="code">lxml</code></a></div><div class="bot-prev"><b>Previous: </b><a href="http://infohost.nmt.edu/~shipman/soft/pylxml/web/Element-find.html">9.5.&nbsp;<code class="code">Element.find()</code>: Find a matching
+      sub-element</a></div><div><b>Home: </b><a href="http://www.nmt.edu/~shipman/">John Shipman's Home Sweet Homepage</a></div></div><hr><div class="colophon"><address><div class="colophon-author">John W. Shipman</div><div class="colophon-mailto">Comments welcome: <a href="mailto:john@nmt.edu">john@nmt.edu</a></div></address><div class="colophon-date">Last updated: 2014-09-02&nbsp;11:23</div><div class="colophon-url">URL: <span class="colophon-uri">http://www.nmt.edu/~shipman/soft/pylxml/web/Element-findall.html</span></div></div></div>
+</body></html>

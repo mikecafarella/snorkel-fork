@@ -413,7 +413,10 @@ class FigureInfo(object):
             figure_idx += 1
             stable_id = "%s::%s:%s:%s" % \
                 (self.document.name, "figure", figure_idx, figure_idx)
-            self.figure = Figure(document=self.document, stable_id=stable_id, position=figure_idx, url=node.get('src'))
+            if node.get('src') != None:
+                self.figure = Figure(document=self.document, stable_id=stable_id, position=figure_idx, url=node.get('src'))
+            elif node.get('data-src')!= None:
+                self.figure = Figure(document=self.document, stable_id=stable_id, position=figure_idx, url=node.get('data-src'))
             self.parent = self.figure
         return figure_idx
 
